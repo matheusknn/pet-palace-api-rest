@@ -12,6 +12,8 @@ public record DadosRegistroVeterinario(
         @NotBlank
         @Email
         String email,
+        @NotBlank
+        String telefone,
         @NotNull
         EspecialidadesVeterinario especialidade,
         @NotNull

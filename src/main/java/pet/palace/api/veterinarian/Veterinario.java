@@ -19,6 +19,7 @@ public class Veterinario {
     private Long id;
     private String nome;
     private String email;
+    private String telefone;
     @Enumerated(EnumType.STRING)
     private EspecialidadesVeterinario especialidade;
     @Embedded
@@ -27,6 +28,7 @@ public class Veterinario {
     public Veterinario(DadosRegistroVeterinario dados) {
         this.nome = dados.nome();
         this.email = dados.email();
+        this.telefone = dados.telefone();
         this.especialidade = dados.especialidade();
         this.endereco = new Endereco(dados.endereco());
     }
