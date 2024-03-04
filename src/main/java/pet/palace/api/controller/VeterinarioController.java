@@ -1,5 +1,6 @@
 package pet.palace.api.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ public class VeterinarioController {
     private VeterinarioRepository repository;
     @PostMapping
     @Transactional
-    public void registrarVeterinario(@RequestBody DadosRegistroVeterinario dados) {
+    public void registrarVeterinario(@RequestBody @Valid DadosRegistroVeterinario dados) {
         repository.save(new Veterinario(dados));
     }
 }
