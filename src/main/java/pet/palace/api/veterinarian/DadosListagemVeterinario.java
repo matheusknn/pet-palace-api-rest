@@ -1,7 +1,7 @@
 package pet.palace.api.veterinarian;
 
-public record DadosListagemVeterinario(String nome, String email, EspecialidadesVeterinario especialidade) {
+public record DadosListagemVeterinario(Long id, String nome, String email, EspecialidadesVeterinario especialidade) {
     public DadosListagemVeterinario(Veterinario veterinario) {
-        this(veterinario.getNome(), veterinario.getEmail(), veterinario.getEspecialidade());
+        this(veterinario.getId(), veterinario.getNome(), veterinario.getEmail(), veterinario.getEspecialidade());
     }
 }

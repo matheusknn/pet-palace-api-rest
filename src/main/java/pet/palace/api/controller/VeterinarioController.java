@@ -7,10 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import pet.palace.api.veterinarian.DadosListagemVeterinario;
-import pet.palace.api.veterinarian.DadosRegistroVeterinario;
-import pet.palace.api.veterinarian.Veterinario;
-import pet.palace.api.veterinarian.VeterinarioRepository;
+import pet.palace.api.veterinarian.*;
 
 import java.util.List;
 
@@ -28,6 +25,20 @@ public class VeterinarioController {
 
     @GetMapping
     public Page<DadosListagemVeterinario> listarVeterinarios(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
-        return repository.findAll(paginacao).map(DadosListagemVeterinario::new);
+        return repository.findAllByAtivoTrue(paginacao).map(DadosListagemVeterinario::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizarDados(@RequestBody @Valid DadosAtualizacaoVeterinario dados) {
+        var veterinario = repository.getReferenceById(dados.id());
+        veterinario.atualizarDados(dados);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirVeterinario(@PathVariable Long id) {
+        var veterinario = repository.getReferenceById(id);
+        veterinario.inativarVeterinario();
     }
 }
