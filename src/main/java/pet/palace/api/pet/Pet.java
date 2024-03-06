@@ -36,6 +36,7 @@ public class Pet {
         this.raca = dadosPet.raca();
         this.condicaoEspecial = dadosPet.condicaoEspecial();
         this.endereco = new Endereco(dadosPet.endereco());
+        this.tutor = dadosPet.tutor();
     }
 }
 
