@@ -34,5 +34,10 @@ public class PetController {
         pet.atualizarInformacoes(dados);
     }
 
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirPet(@PathVariable Long id) {
+        repository.deleteById(id);
+    }
 
 }
