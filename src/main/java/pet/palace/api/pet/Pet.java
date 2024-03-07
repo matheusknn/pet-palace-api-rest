@@ -38,5 +38,20 @@ public class Pet {
         this.endereco = new Endereco(dadosPet.endereco());
         this.tutor = dadosPet.tutor();
     }
+
+    public void atualizarInformacoes(DadosAtualizarPet dados) {
+        if(dados.nome() != null) {
+            this.nome = dados.nome();
+        }
+        if(dados.telefone() != null) {
+            this.telefone = dados.telefone();
+        }
+        if(dados.endereco() != null) {
+            this.endereco.atualizarDadosEndereco(dados.endereco());
+        }
+        if(dados.tutor() != null) {
+            this.tutor = dados.tutor();
+        }
+    }
 }
 

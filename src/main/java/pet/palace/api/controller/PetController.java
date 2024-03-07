@@ -7,10 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import pet.palace.api.pet.DadosListarPet;
-import pet.palace.api.pet.DadosRegistroPet;
-import pet.palace.api.pet.Pet;
-import pet.palace.api.pet.PetRepository;
+import pet.palace.api.pet.*;
 
 import java.util.List;
 
@@ -29,5 +26,13 @@ public class PetController {
     public Page<DadosListarPet> listarPets(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
         return repository.findAll(paginacao).map(DadosListarPet::new);
     }
+
+    @PutMapping
+    @Transactional
+    public void atualizarDadosPet(@RequestBody @Valid DadosAtualizarPet dados) {
+        var pet = repository.getReferenceById(dados.id());
+        pet.atualizarInformacoes(dados);
+    }
+
 
 }
