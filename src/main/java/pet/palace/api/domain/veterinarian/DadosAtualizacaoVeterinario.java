@@ -1,8 +1,8 @@
-package pet.palace.api.veterinarian;
+package pet.palace.api.domain.veterinarian;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import pet.palace.api.address.DadosEndereco;
+import pet.palace.api.domain.address.DadosEndereco;
 
 public record DadosAtualizacaoVeterinario(
         @NotNull

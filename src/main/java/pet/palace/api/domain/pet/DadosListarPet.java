@@ -1,4 +1,4 @@
-package pet.palace.api.pet;
+package pet.palace.api.domain.pet;
 
 public record DadosListarPet(
         Long id,

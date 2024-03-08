@@ -1,4 +1,4 @@
-package pet.palace.api.address;
+package pet.palace.api.domain.address;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

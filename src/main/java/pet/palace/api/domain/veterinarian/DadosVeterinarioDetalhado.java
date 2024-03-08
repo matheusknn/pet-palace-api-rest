@@ -1,6 +1,6 @@
-package pet.palace.api.veterinarian;
+package pet.palace.api.domain.veterinarian;
 
-import pet.palace.api.address.Endereco;
+import pet.palace.api.domain.address.Endereco;
 
 public record DadosVeterinarioDetalhado(Long id, String nome, String email, String telefone, EspecialidadesVeterinario espscialidade, Endereco endereco) {
     public DadosVeterinarioDetalhado(Veterinario veterinario) {

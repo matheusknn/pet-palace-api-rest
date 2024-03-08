@@ -1,4 +1,4 @@
-package pet.palace.api.veterinarian;
+package pet.palace.api.domain.veterinarian;
 
 public enum EspecialidadesVeterinario {
     AVES,

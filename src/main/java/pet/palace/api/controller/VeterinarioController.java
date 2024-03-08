@@ -9,9 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import pet.palace.api.veterinarian.*;
-
-import java.util.List;
+import pet.palace.api.domain.veterinarian.*;
 
 @RestController
 @RequestMapping("veterinarios")
@@ -49,5 +47,11 @@ public class VeterinarioController {
         var veterinario = repository.getReferenceById(id);
         veterinario.inativarVeterinario();
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity detalharVeterinario(@PathVariable Long id) {
+        var veterinario = repository.getReferenceById(id);
+        return ResponseEntity.ok(new DadosVeterinarioDetalhado(veterinario));
     }
 }

@@ -7,9 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import pet.palace.api.pet.*;
-
-import java.util.List;
+import pet.palace.api.domain.pet.*;
 
 @RestController
 @RequestMapping("pets")
@@ -18,7 +16,7 @@ public class PetController {
     private PetRepository repository;
     @PostMapping
     @Transactional
-    public void registrarPet(@RequestBody @Valid  DadosRegistroPet dadosPet) {
+    public void registrarPet(@RequestBody @Valid DadosRegistroPet dadosPet) {
         repository.save(new Pet(dadosPet));
     }
 

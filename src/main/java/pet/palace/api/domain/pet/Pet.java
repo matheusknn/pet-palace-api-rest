@@ -1,12 +1,11 @@
-package pet.palace.api.pet;
+package pet.palace.api.domain.pet;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import pet.palace.api.address.DadosEndereco;
-import pet.palace.api.address.Endereco;
+import pet.palace.api.domain.address.Endereco;
 
 
 @Table(name = "pets")

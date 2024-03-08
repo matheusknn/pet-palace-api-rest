@@ -1,11 +1,11 @@
-package pet.palace.api.veterinarian;
+package pet.palace.api.domain.veterinarian;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import pet.palace.api.address.Endereco;
+import pet.palace.api.domain.address.Endereco;
 
 @Entity(name = "veterinario")
 @Table(name = "veterinarios")

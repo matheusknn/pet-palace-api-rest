@@ -1,4 +1,4 @@
-package pet.palace.api.veterinarian;
+package pet.palace.api.domain.veterinarian;
 
 public record DadosListagemVeterinario(Long id, String nome, String email, EspecialidadesVeterinario especialidade) {
     public DadosListagemVeterinario(Veterinario veterinario) {
