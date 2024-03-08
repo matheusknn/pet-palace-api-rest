@@ -8,6 +8,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 import pet.palace.api.veterinarian.*;
 
 import java.util.List;
@@ -20,8 +21,11 @@ public class VeterinarioController {
     private VeterinarioRepository repository;
     @PostMapping
     @Transactional
-    public ResponseEntity registrarVeterinario(@RequestBody @Valid DadosRegistroVeterinario dados) {
-        repository.save(new Veterinario(dados));
+    public ResponseEntity registrarVeterinario(@RequestBody @Valid DadosRegistroVeterinario dados, UriComponentsBuilder uriBuilder) {
+        var medico = new Veterinario(dados);
+        repository.save(medico);
+        var uri = uriBuilder.path("/veterinarios/{id}").buildAndExpand(medico.getId()).toUri();
+        return ResponseEntity.created(uri).body(new DadosVeterinarioDetalhado(medico));
     }
 
     @GetMapping
