@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pet.palace.api.Infra.security.DadosTokenJwt;
 import pet.palace.api.Infra.security.TokenService;
 import pet.palace.api.domain.user.DadosAutenticacao;
 import pet.palace.api.domain.user.Usuario;
@@ -25,9 +26,11 @@ public class AutenticacaoController {
 
     @PostMapping
     public ResponseEntity fazerLogin(@RequestBody @Valid DadosAutenticacao dados) {
-        var token = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
-        var authentication = manager.authenticate(token);
+        var authenticationToken = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
+        var authentication = manager.authenticate(authenticationToken);
 
-        return ResponseEntity.ok(tokenService.gerarToken((Usuario) authentication.getPrincipal()));
+        var tokenJwt = tokenService.gerarToken((Usuario) authentication.getPrincipal());
+
+        return ResponseEntity.ok(new DadosTokenJwt(tokenJwt));
     }
 }
