@@ -28,6 +28,7 @@ public class VeterinarioController {
 
     @GetMapping
     public ResponseEntity<Page<DadosListagemVeterinario>> listarVeterinarios(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
+
         var page = repository.findAllByAtivoTrue(paginacao).map(DadosListagemVeterinario::new);
         return ResponseEntity.ok(page);
     }
