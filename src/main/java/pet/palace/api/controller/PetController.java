@@ -48,4 +48,10 @@ public class PetController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity detalharPet(@PathVariable Long id) {
+        var pet = repository.getReferenceById(id);
+        return ResponseEntity.ok(new DadosPetDetalhado(pet));
+    }
+
 }
