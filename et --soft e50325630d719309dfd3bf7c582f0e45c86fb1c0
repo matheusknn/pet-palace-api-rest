@@ -1,0 +1,143 @@
+[33mcommit e50325630d719309dfd3bf7c582f0e45c86fb1c0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Tue Mar 12 17:40:46 2024 -0300
+
+    fazer funcionalidade de escolher veterinário aleatório quando o Id não vier na requisição
+
+[33mcommit 238442dc3bd0519106a181aa1f5614a29ec68a8f[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Sun Mar 10 12:55:05 2024 -0300
+
+    criar as classes iniciais que envolvem a entidade Consulta
+
+[33mcommit 179f84e126177daece3c94f1c9eca4300de34860[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Sat Mar 9 21:00:47 2024 -0300
+
+    padronizar a classe petController para devolver ResponseEntity
+
+[33mcommit 792715d5c12057552b275c2cac4679eb530b87d2[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Sat Mar 9 20:10:40 2024 -0300
+
+    tratar outros erros de requisição
+
+[33mcommit 44c6bf8ffd9b5a2ca465f9fd8ade8f8b7d2b0d17[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Sat Mar 9 19:59:24 2024 -0300
+
+    fazer autenticação por token
+
+[33mcommit 740e7a7c8d5040e7d495f3558ea463f9b7d53844[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Sat Mar 9 17:51:36 2024 -0300
+
+    mudar configurações na geração de token
+
+[33mcommit 507943fdbc0e6eac33f699c5b85e0f45f8abca60[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Sat Mar 9 17:21:06 2024 -0300
+
+    fazer função que gera tokens
+
+[33mcommit 82b1d59672d9b6de224096b418770e4e8275cae3[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Sat Mar 9 17:08:23 2024 -0300
+
+    adicionar a biblioteca auth0 jwt no projeto
+
+[33mcommit 1cbc22757aa4675063ca57e477b8a7ec20e53970[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Fri Mar 8 20:37:43 2024 -0300
+
+    adicionando o Spring Security no projeto
+
+[33mcommit 63a6b7ecfe7e87ba9617b3990f989e435f83e6ad[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Fri Mar 8 19:27:29 2024 -0300
+
+    criar a classe controladora de erros TratadorDeErros
+
+[33mcommit eddbf92f5699c5c435a1d00918d4196157819698[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Fri Mar 8 18:12:26 2024 -0300
+
+    mudar o retorno na requisição post de atualizar veterinários da classe VeterinarioController
+
+[33mcommit 0c0880d7d320786d126297fe7c5ada42fd3d8a68[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Fri Mar 8 17:59:12 2024 -0300
+
+    alterar os retornos das requisições get, put e delete da classe VeterinarioController para devolverem responseEntity
+
+[33mcommit b607057cd24076bb250889f79e34891ae5888078[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Thu Mar 7 19:36:33 2024 -0300
+
+    fazer requisição para deletar pet do banco
+
+[33mcommit c09f551bd60c6323e8612b1a81650a2196f36e24[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Thu Mar 7 19:23:14 2024 -0300
+
+    fazer requisição e função para atualizar dados do pet
+
+[33mcommit 39a70bd9f073149f92303bb1975f2b1b100c3b3c[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Wed Mar 6 20:35:49 2024 -0300
+
+    fazer requisição de listar pets
+
+[33mcommit cc6eb2fbb9959f797bef886908087e4c264c6c24[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Wed Mar 6 18:17:04 2024 -0300
+
+    validar dados do DadosRegistroPet
+
+[33mcommit d9ef1c24530dac8d08e5ce3acfe73d389607fd95[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Tue Mar 5 20:29:40 2024 -0300
+
+    criando a entidade Pet
+
+[33mcommit a1c448b1cd77d18513d501444f0d28a9ba39f1a5[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Tue Mar 5 20:06:48 2024 -0300
+
+    criar o controller PetController e começar a mapear o json com a requisição post
+
+[33mcommit 847ed40513396e3670d21213f59fbcd27e0914f5[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Mon Mar 4 22:16:57 2024 -0300
+
+    implementar requisição delete na classe VeterinarioController para fazer uma exclusão lógica
+
+[33mcommit 40ec2aedaf53715dcb41bc4105e566be4e990a60[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Mon Mar 4 21:12:27 2024 -0300
+
+    configurar requisição post de listar veterinários da classe VeterinarioController
+
+[33mcommit 9e1ae5d969af4ab323ad04f324870c1d46b3b1cf[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Mon Mar 4 20:08:36 2024 -0300
+
+    adicionar o atributo telefone a entidade Veterinario e ao banco de dados
+
+[33mcommit 710f699b27552aba841c2f0c8e21b0c376ddf53e[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Mon Mar 4 20:01:11 2024 -0300
+
+    realizar validação dos campos da requisição post da classe VeterinarioController
+
+[33mcommit 41751e3a999ae59045ea65f8f1879e9dbce14337[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Mon Mar 4 19:51:07 2024 -0300
+
+    adicionar tabela veterinarios no banco com migrations
+
+[33mcommit cd6f1ab1f6ebb3a15dffcd78b84d6fd68dca8565[m
+Author: MATHEUS KENJI NISHIMURA <matheuskenji12345678@gmail.com>
+Date:   Sun Mar 3 10:32:19 2024 -0300
+
+    first commit

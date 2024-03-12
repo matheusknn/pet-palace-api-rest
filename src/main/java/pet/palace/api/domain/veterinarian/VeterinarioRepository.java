@@ -14,15 +14,17 @@ public interface VeterinarioRepository extends JpaRepository<Veterinario, Long> 
             select v from veterinario v
             where 
             v.ativo = true
-            and v.especialidade = :especialidade
+            and
+            v.especialidade = :especialidade
             and
             v.id not in(
-                select c.veterinario.id from Consulta c 
-                where
+                select c.veterinario.id from Consulta c
+                where 
                 c.data = :data
             )
             order by rand()
             limit 1
             """)
     Veterinario escolherVeterinarioAleatorioLivreNaData(EspecialidadesVeterinario especialidade, LocalDateTime data);
+
 }
