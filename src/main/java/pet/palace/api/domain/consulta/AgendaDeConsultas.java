@@ -3,9 +3,12 @@ package pet.palace.api.domain.consulta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pet.palace.api.domain.ValidacaoException;
+import pet.palace.api.domain.consulta.validacoes.ValidadorAgendamentoDeConsultas;
 import pet.palace.api.domain.pet.PetRepository;
 import pet.palace.api.domain.veterinarian.Veterinario;
 import pet.palace.api.domain.veterinarian.VeterinarioRepository;
+
+import java.util.List;
 
 @Service
 public class AgendaDeConsultas {
@@ -18,6 +21,9 @@ public class AgendaDeConsultas {
 
     @Autowired
     private PetRepository petRepository;
+
+    @Autowired
+    private List<ValidadorAgendamentoDeConsultas> validadores;
     public void agendarConsulta(DadosAgendarConsulta dados) {
         if(!petRepository.existsById(dados.idPet())) {
             throw new ValidacaoException("id do pet informado não existe");
@@ -25,6 +31,7 @@ public class AgendaDeConsultas {
         if(dados.idVeterinario() != null && !veterinarioRepository.existsById(dados.idVeterinario())) {
             throw new ValidacaoException("id do veterinário informado não existe");
         }
+        validadores.forEach(v -> v.validar(dados));
         var pet = petRepository.getReferenceById(dados.idPet());
         var veterinario = escolherVeterinario(dados);
         var consulta = new Consulta(null, veterinario, pet, dados.data());

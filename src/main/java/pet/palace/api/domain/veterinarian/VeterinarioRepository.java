@@ -27,4 +27,11 @@ public interface VeterinarioRepository extends JpaRepository<Veterinario, Long> 
             """)
     Veterinario escolherVeterinarioAleatorioLivreNaData(EspecialidadesVeterinario especialidade, LocalDateTime data);
 
+    @Query("""
+            select v.ativo
+            from veterinario v
+            where
+            v.id = :id
+            """)
+    Boolean findAtivoById(Long id);
 }
