@@ -11,12 +11,12 @@ import pet.palace.api.domain.veterinarian.Veterinario;
 import java.time.LocalDateTime;
 
 @Table(name = "consultas")
-@Entity(name = "ConsultaVeterinario")
+@Entity(name = "Consulta")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class ConsultaVeterinario {
+public class Consulta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
