@@ -24,7 +24,7 @@ public class AgendaDeConsultas {
 
     @Autowired
     private List<ValidadorAgendamentoDeConsultas> validadores;
-    public void agendarConsulta(DadosAgendarConsulta dados) {
+    public DadosConsultaDetalhado agendarConsulta(DadosAgendarConsulta dados) {
         if(!petRepository.existsById(dados.idPet())) {
             throw new ValidacaoException("id do pet informado não existe");
         }
@@ -34,8 +34,12 @@ public class AgendaDeConsultas {
         validadores.forEach(v -> v.validar(dados));
         var pet = petRepository.getReferenceById(dados.idPet());
         var veterinario = escolherVeterinario(dados);
+        if(veterinario == null) {
+            throw new ValidacaoException("não existe veterinário disponível nessa data");
+        }
         var consulta = new Consulta(null, veterinario, pet, dados.data());
         consultaRepository.save(consulta);
+        return new DadosConsultaDetalhado(consulta);
     }
 
     private Veterinario escolherVeterinario(DadosAgendarConsulta dados) {
