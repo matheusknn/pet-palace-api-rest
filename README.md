@@ -29,3 +29,7 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 - **[Flyway](https://flywaydb.org)**
 
 ---
+
+
+## Status Do Projeto
+-em andamento com planos de novas funcionalidades e melhoramento de código
