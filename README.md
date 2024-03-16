@@ -5,10 +5,16 @@ PetPalace é uma empresa fictícia que oferece vários serviços para seu pet. E
 ---
 
 ## ⚙️ Funcionalidades
-
-- [x] Cadastro/atualização de veterinários e pets;
+- [x] cadastro de veterinário;
+- [x] listagem de veterinários;
+- [x] exclusão lógica de veterinário;
+- [x] atualização de informações do veterinário;
+- [x] cadastro de pet;
+- [x] listagem de pets cadastrados;
+- [x] exclusão de pet no banco de dados;
+- [x] atualização de informações do pet;
 - [x] agendamento de consulta;
-- [x] listagem de veterinários que trabalham/trabalharam na clínica;
+
 ---
 
 ## 🛠 Tecnologias
