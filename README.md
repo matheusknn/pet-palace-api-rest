@@ -32,4 +32,4 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 
 
 ## Status Do Projeto
--em andamento com planos de novas funcionalidades e melhoramento de código
+em andamento com planos de novas funcionalidades e melhoramento de código
